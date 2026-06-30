@@ -1,0 +1,206 @@
+[
+  {
+    "instruction": "有哪些 *.md？",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"*.md\"}}"
+  },
+  {
+    "instruction": "去 https://r.jina.ai/http://example.com 拿数据",
+    "output": "{\"tool\": \"fetch\", \"params\": {\"url\": \"https://r.jina.ai/http://example.com\"}}"
+  },
+  {
+    "instruction": "在 /app/config.py 下搜索 DEBUG",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"DEBUG\", \"path\": \"/app/config.py\"}}"
+  },
+  {
+    "instruction": "有哪些 app/**/*.html？",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"app/**/*.html\"}}"
+  },
+  {
+    "instruction": "翻看 /etc/nginx/nginx.conf",
+    "output": "{\"tool\": \"read\", \"params\": {\"path\": \"/etc/nginx/nginx.conf\"}}"
+  },
+  {
+    "instruction": "搜索关键词 class ，路径 /usr/local/bin/run.sh",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"class \", \"path\": \"/usr/local/bin/run.sh\"}}"
+  },
+  {
+    "instruction": "把 /home/user/notes.txt 里的 VERSION = \"1.0.0\" 替换为 port = 3000",
+    "output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/home/user/notes.txt\", \"old_string\": \"VERSION = \\\"1.0.0\\\"\", \"new_string\": \"port = 3000\"}}"
+  },
+  {
+    "instruction": "将 print(\"hello world\") 保存为 /home/user/notes.txt",
+    "output": "{\"tool\": \"write\", \"params\": {\"path\": \"/home/user/notes.txt\", \"content\": \"print(\\\"hello world\\\")\"}}"
+  },
+  {
+    "instruction": "修改 /tests/test_app.py：DEBUG=False → import os, sys",
+    "output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/tests/test_app.py\", \"old_string\": \"DEBUG=False\", \"new_string\": \"import os, sys\"}}"
+  },
+  {
+    "instruction": "替换 /usr/local/bin/run.sh 中的 DEBUG = False 为 LOG_LEVEL = \"debug\"",
+    "output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/usr/local/bin/run.sh\", \"old_string\": \"DEBUG = False\", \"new_string\": \"LOG_LEVEL = \\\"debug\\\"\"}}"
+  },
+  {
+    "instruction": "去 https://api.github.com 拿数据",
+    "output": "{\"tool\": \"fetch\", \"params\": {\"url\": \"https://api.github.com\"}}"
+  },
+  {
+    "instruction": "在所有文件里找 localhost",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"localhost\", \"path\": \"/etc/hosts\"}}"
+  },
+  {
+    "instruction": "跑一下 df -h",
+    "output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"df -h\"}}"
+  },
+  {
+    "instruction": "glob tests/**/*.py",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"tests/**/*.py\"}}"
+  },
+  {
+    "instruction": "在 /home/user/notes.txt 下搜索 import re",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"import re\", \"path\": \"/home/user/notes.txt\"}}"
+  },
+  {
+    "instruction": "在终端执行：tar -xzf archive.tar.gz",
+    "output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"tar -xzf archive.tar.gz\"}}"
+  },
+  {
+    "instruction": "搜索文件：*.md",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"*.md\"}}"
+  },
+  {
+    "instruction": "执行 mkdir -p /tmp/build",
+    "output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"mkdir -p /tmp/build\"}}"
+  },
+  {
+    "instruction": "搜索文件：app/**/*.html",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"app/**/*.html\"}}"
+  },
+  {
+    "instruction": "搜 /src/main.py 下的 import re",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"import re\", \"path\": \"/src/main.py\"}}"
+  },
+  {
+    "instruction": "修改 /usr/local/bin/run.sh：import os → port = 3000",
+    "output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/usr/local/bin/run.sh\", \"old_string\": \"import os\", \"new_string\": \"port = 3000\"}}"
+  },
+  {
+    "instruction": "查找 **/*.csv 模式的文件",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"**/*.csv\"}}"
+  },
+  {
+    "instruction": "把 /tmp/hello.py 里的 localhost:8000 替换为 port = 3000",
+    "output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/tmp/hello.py\", \"old_string\": \"localhost:8000\", \"new_string\": \"port = 3000\"}}"
+  },
+  {
+    "instruction": "grep TODO: refactor in /etc/hosts",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"TODO: refactor\", \"path\": \"/etc/hosts\"}}"
+  },
+  {
+    "instruction": "生成 /app/config.py，内容是 def main():\n    pass",
+    "output": "{\"tool\": \"write\", \"params\": {\"path\": \"/app/config.py\", \"content\": \"def main():\\n    pass\"}}"
+  },
+  {
+    "instruction": "显示 /app/utils/helpers.py 的全文",
+    "output": "{\"tool\": \"read\", \"params\": {\"path\": \"/app/utils/helpers.py\"}}"
+  },
+  {
+    "instruction": "执行命令 cat /etc/os-release",
+    "output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"cat /etc/os-release\"}}"
+  },
+  {
+    "instruction": "bash: cat /etc/os-release",
+    "output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"cat /etc/os-release\"}}"
+  },
+  {
+    "instruction": "执行：ls -la /var/log",
+    "output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"ls -la /var/log\"}}"
+  },
+  {
+    "instruction": "下载 https://r.jina.ai/http://example.com 的内容",
+    "output": "{\"tool\": \"fetch\", \"params\": {\"url\": \"https://r.jina.ai/http://example.com\"}}"
+  },
+  {
+    "instruction": "bash: cat /etc/os-release",
+    "output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"cat /etc/os-release\"}}"
+  },
+  {
+    "instruction": "有哪些 app/**/*.html？",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"app/**/*.html\"}}"
+  },
+  {
+    "instruction": "在 ~/.bashrc 中，将 DEBUG = False 改为 DEBUG=True",
+    "output": "{\"tool\": \"edit\", \"params\": {\"path\": \"~/.bashrc\", \"old_string\": \"DEBUG = False\", \"new_string\": \"DEBUG=True\"}}"
+  },
+  {
+    "instruction": "在 /var/log/syslog 里写入：SECRET_KEY = \"changeme\"",
+    "output": "{\"tool\": \"write\", \"params\": {\"path\": \"/var/log/syslog\", \"content\": \"SECRET_KEY = \\\"changeme\\\"\"}}"
+  },
+  {
+    "instruction": "在 /home/project/Makefile 中，将 port = 8080 改为 VERSION = \"2.0.0\"",
+    "output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/home/project/Makefile\", \"old_string\": \"port = 8080\", \"new_string\": \"VERSION = \\\"2.0.0\\\"\"}}"
+  },
+  {
+    "instruction": "fetch https://jsonplaceholder.typicode.com/todos/1",
+    "output": "{\"tool\": \"fetch\", \"params\": {\"url\": \"https://jsonplaceholder.typicode.com/todos/1\"}}"
+  },
+  {
+    "instruction": "给我看看 /tests/test_app.py",
+    "output": "{\"tool\": \"read\", \"params\": {\"path\": \"/tests/test_app.py\"}}"
+  },
+  {
+    "instruction": "下载 https://r.jina.ai/http://example.com 的内容",
+    "output": "{\"tool\": \"fetch\", \"params\": {\"url\": \"https://r.jina.ai/http://example.com\"}}"
+  },
+  {
+    "instruction": "搜索 /home/project/README.md 目录下的 print(",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"print(\", \"path\": \"/home/project/README.md\"}}"
+  },
+  {
+    "instruction": "找一下 /app/config.py 里的 print(",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"print(\", \"path\": \"/app/config.py\"}}"
+  },
+  {
+    "instruction": "找 **/*.yml 匹配的文件",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"**/*.yml\"}}"
+  },
+  {
+    "instruction": "在所有文件里找 import os",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"import os\", \"path\": \"/home/user/notes.txt\"}}"
+  },
+  {
+    "instruction": "列出所有 *.md 文件",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"*.md\"}}"
+  },
+  {
+    "instruction": "在 /etc/hosts 中，将 port = 8080 改为 import os, sys",
+    "output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/etc/hosts\", \"old_string\": \"port = 8080\", \"new_string\": \"import os, sys\"}}"
+  },
+  {
+    "instruction": "运行 curl -s http://localhost:8000/health",
+    "output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"curl -s http://localhost:8000/health\"}}"
+  },
+  {
+    "instruction": "update /app/config.py: change LOG_LEVEL = \"info\" to LOG_LEVEL = \"debug\"",
+    "output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/app/config.py\", \"old_string\": \"LOG_LEVEL = \\\"info\\\"\", \"new_string\": \"LOG_LEVEL = \\\"debug\\\"\"}}"
+  },
+  {
+    "instruction": "找一下 /etc/nginx/nginx.conf 里的 API_KEY",
+    "output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"API_KEY\", \"path\": \"/etc/nginx/nginx.conf\"}}"
+  },
+  {
+    "instruction": "run pip install requests",
+    "output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"pip install requests\"}}"
+  },
+  {
+    "instruction": "请把 /home/project/README.md 的内容读出来",
+    "output": "{\"tool\": \"read\", \"params\": {\"path\": \"/home/project/README.md\"}}"
+  },
+  {
+    "instruction": "显示 **/*.yml 文件列表",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"**/*.yml\"}}"
+  },
+  {
+    "instruction": "查找 **/*.json 模式的文件",
+    "output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"**/*.json\"}}"
+  }
+]

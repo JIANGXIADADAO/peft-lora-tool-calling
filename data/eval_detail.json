@@ -1,0 +1,297 @@
+{
+  "summary": {
+    "json": 15,
+    "tool": 15,
+    "params": 11
+  },
+  "tests": [
+    {
+      "idx": 1,
+      "instruction": "读取 /home/project/README.md",
+      "expected_tool": "read",
+      "expected_params": {
+        "path": "/home/project/README.md"
+      },
+      "raw_output": "{\"tool\": \"read\", \"params\": {\"path\": \"/home/project/README.md\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "read",
+        "params": {
+          "path": "/home/project/README.md"
+        }
+      }
+    },
+    {
+      "idx": 2,
+      "instruction": "创建 /tmp/hello.py，内容 print('hello')",
+      "expected_tool": "write",
+      "expected_params": {
+        "path": "/tmp/hello.py",
+        "content": "print('hello')"
+      },
+      "raw_output": "{\"tool\": \"write\", \"params\": {\"path\": \"/tmp/hello.py\", \"content\": \"print(\\\"hello\\\")\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": false,
+      "parsed": {
+        "tool": "write",
+        "params": {
+          "path": "/tmp/hello.py",
+          "content": "print(\"hello\")"
+        }
+      }
+    },
+    {
+      "idx": 3,
+      "instruction": "把 /app/config.py 的 DEBUG=False 改成 DEBUG=True",
+      "expected_tool": "edit",
+      "expected_params": {
+        "path": "/app/config.py",
+        "old_string": "DEBUG=False",
+        "new_string": "DEBUG=True"
+      },
+      "raw_output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/app/config.py\", \"old_string\": \"DEBUG=False\", \"new_string\": \"DEBUG=True\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "edit",
+        "params": {
+          "path": "/app/config.py",
+          "old_string": "DEBUG=False",
+          "new_string": "DEBUG=True"
+        }
+      }
+    },
+    {
+      "idx": 4,
+      "instruction": "搜索所有 .py 文件里的 TODO",
+      "expected_tool": "grep",
+      "expected_params": {
+        "pattern": "TODO",
+        "path": "."
+      },
+      "raw_output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"TODO\", \"path\": \"/src\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": false,
+      "parsed": {
+        "tool": "grep",
+        "params": {
+          "pattern": "TODO",
+          "path": "/src"
+        }
+      }
+    },
+    {
+      "idx": 5,
+      "instruction": "列出 src/ 下所有 .py 文件",
+      "expected_tool": "glob",
+      "expected_params": {
+        "pattern": "src/**/*.py"
+      },
+      "raw_output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"src/\", \"path\": \"/home/user/notes\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": false,
+      "parsed": {
+        "tool": "glob",
+        "params": {
+          "pattern": "src/",
+          "path": "/home/user/notes"
+        }
+      }
+    },
+    {
+      "idx": 6,
+      "instruction": "运行 pip install requests",
+      "expected_tool": "bash",
+      "expected_params": {
+        "cmd": "pip install requests"
+      },
+      "raw_output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"pip install requests\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "bash",
+        "params": {
+          "cmd": "pip install requests"
+        }
+      }
+    },
+    {
+      "idx": 7,
+      "instruction": "抓取 https://api.github.com 的内容",
+      "expected_tool": "fetch",
+      "expected_params": {
+        "url": "https://api.github.com"
+      },
+      "raw_output": "{\"tool\": \"fetch\", \"params\": {\"url\": \"https://api.github.com\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "fetch",
+        "params": {
+          "url": "https://api.github.com"
+        }
+      }
+    },
+    {
+      "idx": 8,
+      "instruction": "打开 /etc/hosts 看看",
+      "expected_tool": "read",
+      "expected_params": {
+        "path": "/etc/hosts"
+      },
+      "raw_output": "{\"tool\": \"read\", \"params\": {\"path\": \"/etc/hosts\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "read",
+        "params": {
+          "path": "/etc/hosts"
+        }
+      }
+    },
+    {
+      "idx": 9,
+      "instruction": "在 /tmp/test.py 写入 import sys",
+      "expected_tool": "write",
+      "expected_params": {
+        "path": "/tmp/test.py",
+        "content": "import sys"
+      },
+      "raw_output": "{\"tool\": \"write\", \"params\": {\"path\": \"/tmp/test.py\", \"content\": \"import sys\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "write",
+        "params": {
+          "path": "/tmp/test.py",
+          "content": "import sys"
+        }
+      }
+    },
+    {
+      "idx": 10,
+      "instruction": "执行 ls -la /var/log",
+      "expected_tool": "bash",
+      "expected_params": {
+        "cmd": "ls -la /var/log"
+      },
+      "raw_output": "{\"tool\": \"bash\", \"params\": {\"cmd\": \"ls -la /var/log\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "bash",
+        "params": {
+          "cmd": "ls -la /var/log"
+        }
+      }
+    },
+    {
+      "idx": 11,
+      "instruction": "搜 /src 下所有包含 import os 的文件",
+      "expected_tool": "grep",
+      "expected_params": {
+        "pattern": "import os",
+        "path": "/src"
+      },
+      "raw_output": "{\"tool\": \"grep\", \"params\": {\"pattern\": \"import os\", \"path\": \"/src\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "grep",
+        "params": {
+          "pattern": "import os",
+          "path": "/src"
+        }
+      }
+    },
+    {
+      "idx": 12,
+      "instruction": "把 /app/main.py 中的 port=8080 替换为 port=3000",
+      "expected_tool": "edit",
+      "expected_params": {
+        "path": "/app/main.py",
+        "old_string": "port=8080",
+        "new_string": "port=3000"
+      },
+      "raw_output": "{\"tool\": \"edit\", \"params\": {\"path\": \"/app/main.py\", \"old_string\": \"port=8080\", \"new_string\": \"port=3000\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "edit",
+        "params": {
+          "path": "/app/main.py",
+          "old_string": "port=8080",
+          "new_string": "port=3000"
+        }
+      }
+    },
+    {
+      "idx": 13,
+      "instruction": "找一下项目里所有的 .json 文件",
+      "expected_tool": "glob",
+      "expected_params": {
+        "pattern": "**/*.json"
+      },
+      "raw_output": "{\"tool\": \"glob\", \"params\": {\"pattern\": \"*.json\", \"path\": \"/src\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": false,
+      "parsed": {
+        "tool": "glob",
+        "params": {
+          "pattern": "*.json",
+          "path": "/src"
+        }
+      }
+    },
+    {
+      "idx": 14,
+      "instruction": "请求 http://example.com/api/data",
+      "expected_tool": "fetch",
+      "expected_params": {
+        "url": "http://example.com/api/data"
+      },
+      "raw_output": "{\"tool\": \"fetch\", \"params\": {\"url\": \"http://example.com/api/data\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "fetch",
+        "params": {
+          "url": "http://example.com/api/data"
+        }
+      }
+    },
+    {
+      "idx": 15,
+      "instruction": "读一下 ~/.bashrc",
+      "expected_tool": "read",
+      "expected_params": {
+        "path": "~/.bashrc"
+      },
+      "raw_output": "{\"tool\": \"read\", \"params\": {\"path\": \"~/.bashrc\"}}",
+      "valid_json": true,
+      "tool_ok": true,
+      "params_ok": true,
+      "parsed": {
+        "tool": "read",
+        "params": {
+          "path": "~/.bashrc"
+        }
+      }
+    }
+  ]
+}
